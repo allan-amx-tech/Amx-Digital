@@ -21,7 +21,7 @@ export const siteData = {
   // REDES SOCIAIS  (deixe "" para ocultar o link)
   // ----------------------------------------------------------
   social: {
-    instagram: "https://instagram.com/amxdigitalgroup",
+    instagram: "https://www.instagram.com/amxdigital_/",
     linkedin:  "https://linkedin.com/company/amxdigitalgroup",
     whatsapp:  "https://wa.me/5521999999999",
   },
