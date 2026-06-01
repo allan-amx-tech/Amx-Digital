@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --void: #030304;
+  --surface: #0F1115;
+  --blue: #02b2fe;
+  --dark: #012c7a;
+  --gold: #00e5ff;
+  --muted: #94A3B8;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--void);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+
+.font-heading { font-family: 'Syne', sans-serif; }
+.font-mono    { font-family: 'JetBrains Mono', monospace; }
+
+/* Grid background pattern */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(30, 41, 59, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 41, 59, 0.4) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+/* Glow line top border */
+.glow-line-top::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(2, 178, 254, 0.6), transparent);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+@keyframes spin-slow   { to { transform: rotate(360deg); } }
+@keyframes spin-reverse { to { transform: rotate(-360deg); } }
+@keyframes ping-blue {
+  0%        { transform: scale(1); opacity: 1; }
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
+.animate-float        { animation: float 8s ease-in-out infinite; }
+.animate-spin-slow    { animation: spin-slow 10s linear infinite; }
+.animate-spin-reverse { animation: spin-reverse 15s linear infinite; }
+.animate-ping-blue    { animation: ping-blue 1.5s infinite; }
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(to right, var(--blue), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
